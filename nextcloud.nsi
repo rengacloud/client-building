@@ -193,7 +193,7 @@ Page custom PageReinstall PageLeaveReinstall
 ;-----------------------------------------------------------------------------
 ; Other MUI macros.
 ;-----------------------------------------------------------------------------
-!insertmacro MUI_LANGUAGE "English"
+!insertmacro MUI_LANGUAGE "Russian"
 
 !include ${source_path}\admin\win\nsi\l10n\languages.nsh
 !include ${source_path}\admin\win\nsi\l10n\declarations.nsh
@@ -207,7 +207,7 @@ VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "${VERSION}"
 !macro SETLANG un
    Function ${un}SetLang
       # load the selected language file
-      !include "${source_path}/admin/win/nsi/l10n\English.nsh"
+      !include "${source_path}/admin/win/nsi/l10n\Russian.nsh"
       StrCmp $LANGUAGE ${LANG_GERMAN} German 0
       StrCmp $LANGUAGE ${LANG_DUTCH} Dutch 0
       StrCmp $LANGUAGE ${LANG_FINNISH} Finnish 0

@@ -88,15 +88,15 @@ rem 			"clean up"
 Rem ******************************************************************************************
 
 echo "* Remove old installation files %MY_INSTALL_PATH% from previous build."
-start "rm -rf" /B /wait rm -rf "%MY_INSTALL_PATH%/"*
+start "rm -rf" /B /wait "%WIN_GIT_PATH%\usr\bin\rm.exe" -rf "%MY_INSTALL_PATH%/"*
 if %ERRORLEVEL% neq 0 goto onError
 
 echo "* Remove old dependencies files %MY_QT_DEPLOYMENT_PATH% from previous build."
-start "rm -rf" /B /wait rm -rf "%MY_QT_DEPLOYMENT_PATH%/"*
+start "rm -rf" /B /wait "%WIN_GIT_PATH%\usr\bin\rm.exe" -rf "%MY_QT_DEPLOYMENT_PATH%/"*
 if %ERRORLEVEL% neq 0 goto onError
 
 echo "* Remove %MY_BUILD_PATH%/CMakeFiles from previous build."
-start "rm -rf" /B /wait rm -rf "%MY_BUILD_PATH%/"*
+start "rm -rf" /B /wait "%WIN_GIT_PATH%\usr\bin\rm.exe" -rf "%MY_BUILD_PATH%/"*
 if %ERRORLEVEL% neq 0 goto onError
 
 Rem ******************************************************************************************

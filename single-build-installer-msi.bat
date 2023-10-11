@@ -145,7 +145,7 @@ if "%USE_CODE_SIGNING%" == "0" (
 )
 
 echo "* Move %MSI_FILENAME% to '%INSTALLER_OUTPUT_PATH%'."
-start "move msi" /D "%MY_MSI_PATH%" /B /wait mv "%MSI_FILENAME%" "%INSTALLER_OUTPUT_PATH%"/
+start "move msi" /D "%MY_MSI_PATH%" /B /wait "%WIN_GIT_PATH%\usr\bin\mv.exe" "%MSI_FILENAME%" "%INSTALLER_OUTPUT_PATH%"/
 if %ERRORLEVEL% neq 0 goto onError
 
 if "%UPLOAD_BUILD%" == "0" (

@@ -20,20 +20,20 @@ Rem            If you intend to modify or specify them outside, keep the scheme!
 Rem ************************************************************************************************************************************************************************************
 Rem Branding options
 
-if "%APP_NAME%" == ""                       set APP_NAME=Nextcloud
-if "%APP_NAME_SANITIZED%" == ""             set APP_NAME_SANITIZED=Nextcloud
+if "%APP_NAME%" == ""                       set APP_NAME=Rengacloud
+if "%APP_NAME_SANITIZED%" == ""             set APP_NAME_SANITIZED=Rengacloud
 
-if "%USE_BRANDING%" == ""                   set USE_BRANDING=0
+if "%USE_BRANDING%" == ""                   set USE_BRANDING=1
 
 Rem ************************************************************************************************************************************************************************************
 Rem Build environment
 
 rem Comma separated list of build targets (default: Win64, Win32)
-if "%BUILD_TARGETS%" == ""                  set BUILD_TARGETS=Win64,Win32
+if "%BUILD_TARGETS%" == ""                  set BUILD_TARGETS=Win64
 
-if "%PROJECT_PATH%" == ""                   set PROJECT_PATH=c:/Nextcloud/client-building
+if "%PROJECT_PATH%" == ""                   set PROJECT_PATH=D:/SRC/RengaCloud/client-building
 
-if "%Png2Ico_EXECUTABLE%" == ""             set Png2Ico_EXECUTABLE=c:/Nextcloud/tools/png2ico.exe
+if "%Png2Ico_EXECUTABLE%" == ""             set Png2Ico_EXECUTABLE=D:/SRC/RengaCloud/client-building/tools/png2ico.exe
 
 if "%VS_VERSION%" == ""                     set VS_VERSION=2019
 
@@ -89,7 +89,7 @@ if "%USE_BRANDING%" == "1" (
 )
 
 Rem Updater: ON = build, OFF = don't build (default)
-if "%BUILD_UPDATER%" == ""                  set BUILD_UPDATER=OFF
+if "%BUILD_UPDATER%" == ""                  set BUILD_UPDATER=ON
 
 Rem ************************************************************************************************************************************************************************************
 Rem Installer Options: 1 = build, 0 = don't build (default)
@@ -102,14 +102,14 @@ if "%INSTALLER_OUTPUT_PATH%" == ""          set INSTALLER_OUTPUT_PATH=%PROJECT_P
 
 Rem ************************************************************************************************************************************************************************************
 Rem Code Signing Options: 1 = enable (default), 0 = disable
-if "%USE_CODE_SIGNING%" == ""               set USE_CODE_SIGNING=1
+if "%USE_CODE_SIGNING%" == ""               set USE_CODE_SIGNING=0
 
 Rem Vendor Name: Used for signing, also used by the installer
-if "%APPLICATION_VENDOR%" == ""             set APPLICATION_VENDOR=Nextcloud GmbH
+if "%APPLICATION_VENDOR%" == ""             set APPLICATION_VENDOR=Rengacloud
 
 Rem PFX Key and Password - it may be a good idea to set the password outside (environment variables)
 if "%P12_KEY%" == ""                        set P12_KEY=%PROJECT_PATH%\key\%APPLICATION_VENDOR%.p12
-if "%P12_KEY_PASSWORD%" == ""               set P12_KEY_PASSWORD=
+if "%P12_KEY_PASSWORD%" == ""               set P12_KEY_PASSWORD=123123
 
 if "%SIGN_FILE_DIGEST_ALG%" == ""           set SIGN_FILE_DIGEST_ALG=sha256
 if "%SIGN_TIMESTAMP_URL%" == ""             set SIGN_TIMESTAMP_URL=http://timestamp.digicert.com
